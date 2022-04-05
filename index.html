@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    Data should be here:
+    <p id="dbdata">DB Data Return Fail<p>
+     <p id="testdata">String Return Fail</p>
+  </body>
+
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+//two functions to display returned values, one for string one for data from DB
+function dbDisplay(some) { document.getElementById("dbdata").innerHTML = some;
+}
+function stringDisplay(some) { document.getElementById("testdata").innerHTML = some;
+}
+
+//Call and return action for two functions - one returns and string and the other DB data. 
+
+getData().then(
+  function(value) {dbDisplay(value);}
+);
+
+stringReturn().then(
+  function(value) {stringDisplay(value);}
+);
+
+  
+    </script>
+  
+</html>
